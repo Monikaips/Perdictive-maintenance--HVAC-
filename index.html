@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Airsense Artisans Dashboard Design </title>
+
+    <script>
+        // Auto-refresh the page every 30 seconds
+        setInterval(function() {
+            location.reload();
+        }, 30000);
+    </script>
+</head>
+
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo" id="logo-img">
+                    <img src="images/logo.png">
+                    <h2>Airsense<br><span class="danger">Artisans</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html" class="active" >
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="history.html" >
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>History</h3>
+                </a>
+                <a href="analytics.html">
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="reports.html">
+                    <span class="material-icons-sharp">
+                        report_gmailerrorred
+                    </span>
+                    <h3>Reports</h3>
+                </a>
+                
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            <h1>Dashboard</h1>
+            <center>
+                <div style="margin-bottom: 20px;">
+                    <input id="checkbox" type="checkbox" />
+                    <label class="switch" for="checkbox">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="slider">
+                            <path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"></path>
+                        </svg>
+                    </label>
+                </div>
+            </center>
+
+            <div id="loading" style="display: none;">
+                <!-- You can use a spinner icon here if you prefer -->
+            </div>
+
+            <div class="analyse" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+                <div class="sales">
+                    <div class="status" id="temperatureStatus">
+                        <div class="info">
+                            <h3>Temperature</h3>
+                            <h1 id="temperatureValue">Loading...</h1>
+                        </div>
+                        <div class="icon-wrapper">
+                            <span class="material-icons-sharp">thermostat</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="visits">
+                    <div class="status" id="humidityStatus">
+                        <div class="info">
+                            <h3>Humidity</h3>
+                            <h1 id="humidityValue">Loading...</h1>
+                        </div>
+                        <div class="icon-wrapper">
+                            <span class="material-icons-sharp">water_drop</span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="searches">
+                    <div class="status" id="currentStatus">
+                        <div class="info">
+                            <h3>Current</h3>
+                            <h1 id="currentValue">Loading...</h1>
+                        </div>
+                        <div class="icon-wrapper">
+                            <span class="material-icons-sharp">bolt</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="searches">
+                    <div class="status" id="voltageStatus">
+                        <div class="info">
+                            <h3>Voltage</h3>
+                            <h1 id="voltageValue">Loading...</h1>
+                        </div>
+                        <div class="icon-wrapper">
+                            <span class="material-icons-sharp">flash_on</span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="searches">
+                    <div class="status" id="powerStatus">
+                        <div class="info">
+                            <h3>Power</h3>
+                            <h1 id="powerValue">Loading...</h1>
+                        </div>
+                        <div class="icon-wrapper">
+                            <span class="material-icons-sharp">power</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="searches">
+                    <div class="status" id="energyConsumptionStatus">
+                        <div class="info">
+                            <h3>Energy Consumption</h3>
+                            <h1 id="energyConsumptionValue">Loading...</h1>
+                        </div>
+                        <div class="icon-wrapper">
+                            <span class="material-icons-sharp">electric_meter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        
+        <!-- End of Main Content -->
+
+         <!-- Right Section -->
+         <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Monika</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/user-1.png">
+                    </div>
+                </div>
+
+            </div>
+            <!-- End of Nav -->
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/logo2.png">
+                    <h2>Monika</h2>
+                    <p>Technician</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <span class="material-icons-sharp">
+                        notifications_none
+                    </span>
+                </div>
+
+                <div id="reminders-list">
+                    <div class="notification alert">
+                        <div class="icon">
+                            <span class="material-icons-sharp">warning</span>
+                        </div>
+                        <div class="content">
+                            <div class="info">
+                                <p><strong>Alert:</strong> HVAC filter replacement due soon.</p>
+                            </div>
+                            <span class="material-icons-sharp close-icon">close</span>
+                        </div>
+                    </div>
+
+                    <div class="notification active">
+                        <div class="icon">
+                            <span class="material-icons-sharp">volume_up</span>
+                        </div>
+                        <div class="content">
+                            <div class="info">
+                                <h3>Seasonal Maintenance Reminder</h3>
+                                <small class="text-muted">
+                                    Date: May 15, 2024
+                                </small>
+                                <small class="text-muted">
+                                    Time: 9:00 AM
+                                </small>
+                                
+                            </div>
+                            <span class="material-icons-sharp">more_vert</span>
+                            <span class="material-icons-sharp close-icon" onclick="removeNotification(this)">close</span>
+                        </div>
+                    </div>
+
+                    <div class="add-reminder">
+                        <div class="add-reminder-btn" onclick="toggleReminderForm()">
+                            <span class="material-icons-sharp">add</span>
+                            <h3>Add Reminder</h3>
+                        </div>
+                        <div class="reminder-form-container" style="display: none;">
+                            <form class="reminder-form">
+                                <div class="form-group">
+                                    <label for="reminder-text">Reminder:</label>
+                                    <input type="text" id="reminder-text" placeholder="Enter reminder text" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reminder-date">Date:</label>
+                                    <input type="date" id="reminder-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reminder-time">Time:</label>
+                                    <input type="time" id="reminder-time" required>
+                                </div>
+                                <button type="button" onclick="addReminder()">Save Reminder</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="content" id="reminder-list">
+                        <!-- Reminder items will be dynamically added here -->
+                    </div>
+                    
+                                                                                                                 
+            </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    loadReminders();
+    document.getElementById("checkbox").addEventListener("change", function() {
+        var status = this.checked ? "1on" : "1off";
+        sendDataToSpreadsheet(status);
+    });
+    fetchAndUpdateData();
+    setInterval(fetchAndUpdateData, 30000); // Refresh data every 30 seconds
+});
+
+function sendDataToSpreadsheet(status) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("Data sent successfully");
+        }
+    };
+    xhttp.open("GET", "https://script.google.com/macros/s/AKfycbwQN_wg1t5xZkHf90tsmyF84qcTrOYg6VPPenh8HzW3saiLsZgReH3UsFEY0DYXMwdX/exec?status=" + status, true);
+    xhttp.send();
+}
+
+function removeNotification(closeIcon) {
+    const notification = closeIcon.closest('.notification');
+    const reminderText = notification.querySelector('.info p strong').textContent;
+    removeReminderFromLocalStorage(reminderText);
+    if (notification) {
+        notification.remove();
+    }
+}
+
+function createTemperatureAlert(message) {
+    createAlert('temperature', message);
+}
+
+function createVoltageAlert(message) {
+    createAlert('voltage', message);
+}
+
+function createCurrentAlert(message) {
+    createAlert('current', message);
+}
+
+function createAlert(type, message) {
+    const remindersList = document.getElementById('reminders-list');
+    const alertDiv = document.createElement('div');
+    alertDiv.className = 'notification alert';
+    const currentTime = new Date();
+    const alertDateTime = `${currentTime.toLocaleDateString()} ${currentTime.toLocaleTimeString()}`;
+    alertDiv.innerHTML = `
+        <div class="icon">
+            <span class="material-icons-sharp">warning</span>
+        </div>
+        <div class="content">
+            <div class="info">
+                <p><strong>Alert:</strong> ${message}</p>
+                <small class="text-muted">${alertDateTime}</small>
+            </div>
+            <span class="material-icons-sharp close-icon">close</span>
+        </div>
+    `;
+    remindersList.prepend(alertDiv);
+}
+
+function fetchAndUpdateData() {
+    const url = 'https://script.google.com/macros/s/AKfycby71kERzAbsWppy3-txlWSNmi94Y1xvlaLxayJRfZ0qXTHZxyRrxdBKWrCy_AbtD_v1/exec'; // Replace with your deployed web app URL
+    document.getElementById('loading').style.display = 'block';
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('voltageValue').textContent = `${data.voltage} V`;
+            document.getElementById('currentValue').textContent = `${data.current} A`;
+            document.getElementById('powerValue').textContent = `${data.power} W`;
+            document.getElementById('temperatureValue').textContent = `${data.temperature} °C`;
+            document.getElementById('humidityValue').textContent = `${data.humidity} %`;
+            document.getElementById('energyConsumptionValue').textContent = `${data.energy} kWh`;
+
+            if (data.temperature > 25 || data.temperature < 0) {
+                createTemperatureAlert(`Temperature is ${data.temperature} °C, outside the normal range!`);
+            }
+
+            if (data.voltage < 220 || data.voltage > 240) {
+                createVoltageAlert(`Voltage is ${data.voltage} V, outside the normal range (220-240 V)!`);
+            }
+
+            if (data.current < 0 || data.current > 5) {
+                createCurrentAlert(`Current is ${data.current} A, outside the normal range (0-5 A)!`);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function addReminder() {
+    var reminderText = document.getElementById('reminder-text').value;
+    var reminderDate = document.getElementById('reminder-date').value;
+    var reminderTime = document.getElementById('reminder-time').value;
+
+    var dateTime = new Date(reminderDate + 'T' + reminderTime);
+    var formattedTime = dateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    var reminderItem = document.createElement('div');
+    reminderItem.classList.add('notification');
+    reminderItem.innerHTML = `
+        <div class="icon">
+            <span class="material-icons-sharp">warning</span>
+        </div>
+        <div class="content">
+            <div class="info">
+                <p><strong>${reminderText}</strong></p>
+                <small class="text-muted">Date: ${reminderDate}</small><br>
+                <small class="text-muted">Time: ${formattedTime}</small>
+            </div>
+            <span class="material-icons-sharp close-icon">close</span>
+        </div>
+    `;
+
+    var reminderList = document.getElementById('reminder-list');
+    reminderList.appendChild(reminderItem);
+
+    saveReminderToLocalStorage(reminderText, reminderDate, reminderTime);
+
+    document.getElementById('reminder-text').value = '';
+    document.getElementById('reminder-date').value = '';
+    document.getElementById('reminder-time').value = '';
+
+    var reminderFormContainer = document.querySelector('.reminder-form-container');
+    reminderFormContainer.style.display = 'none';
+    var addReminderButton = document.querySelector('.add-reminder-btn');
+    addReminderButton.style.display = 'block';
+}
+
+function toggleReminderForm() {
+    var reminderFormContainer = document.querySelector('.reminder-form-container');
+    var addReminderButton = document.querySelector('.add-reminder-btn');
+    reminderFormContainer.style.display = 'block';
+    addReminderButton.style.display = 'none';
+}
+
+function saveReminderToLocalStorage(text, date, time) {
+    let reminders = JSON.parse(localStorage.getItem('reminders')) || [];
+    reminders.push({ text, date, time });
+    localStorage.setItem('reminders', JSON.stringify(reminders));
+}
+
+function loadReminders() {
+    let reminders = JSON.parse(localStorage.getItem('reminders')) || [];
+    reminders.forEach(reminder => {
+        var dateTime = new Date(reminder.date + 'T' + reminder.time);
+        var formattedTime = dateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+        var reminderItem = document.createElement('div');
+        reminderItem.classList.add('notification');
+        reminderItem.innerHTML = `
+            <div class="icon">
+                <span class="material-icons-sharp">warning</span>
+            </div>
+            <div class="content">
+                <div class="info">
+                    <p><strong>${reminder.text}</strong></p>
+                    <small class="text-muted">Date: ${reminder.date}</small><br>
+                    <small class="text-muted">Time: ${formattedTime}</small>
+                </div>
+                <span class="material-icons-sharp close-icon">close</span>
+            </div>
+        `;
+        var reminderList = document.getElementById('reminder-list');
+        reminderList.appendChild(reminderItem);
+    });
+}
+
+function removeReminderFromLocalStorage(text) {
+    let reminders = JSON.parse(localStorage.getItem('reminders')) || [];
+    reminders = reminders.filter(reminder => reminder.text !== text);
+    localStorage.setItem('reminders', JSON.stringify(reminders));
+}
+
+
+    </script>
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

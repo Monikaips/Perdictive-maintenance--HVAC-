@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="analytics.css">
+    <title>Responsive Dashboard Design #1 | Airsense Artisans</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo" id="logo-img">
+                    <img src="images/logo.png">
+                    <h2>Airsense<br><span class="danger">Artisans</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="history.html">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3>History</h3>
+                </a>
+                <a href="analytics.html" class="active">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="reports.html">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            <h1>Analytics</h1>
+            <div class="total-energy">
+                <h3>Total Energy Consumed</h3>
+                <p id="totalEnergyValue">Loading...</p>
+            </div>
+            <div class="slide-container">
+                <div class="slides">
+                    <div class="chart-container">
+                        <h4>VOLTAGE</h4>
+                        <iframe width="500" height="400" seamless frameborder="0" scrolling="no"
+                            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRELwgZYn_Nr8A-kxUuE7SBi--fmg9UxF9yrOs4nTBYJNXLZQ71nclo3hSeEechLzjNlDPPPdUn0aCI/pubchart?oid=1521576506&format=interactive"></iframe>
+                    </div>
+                    <div class="chart-container">
+                        <h4>TEMPERATURE</h4>
+                        <iframe width="500" height="400" seamless frameborder="0" scrolling="no"
+                            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRELwgZYn_Nr8A-kxUuE7SBi--fmg9UxF9yrOs4nTBYJNXLZQ71nclo3hSeEechLzjNlDPPPdUn0aCI/pubchart?oid=1130759109&format=interactive"></iframe>
+                    </div>
+                    <div class="chart-container">
+                        <h4>HUMIDITY</h4>
+                        <iframe width="500" height="400" seamless frameborder="0" scrolling="no"
+                            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRELwgZYn_Nr8A-kxUuE7SBi--fmg9UxF9yrOs4nTBYJNXLZQ71nclo3hSeEechLzjNlDPPPdUn0aCI/pubchart?oid=1683548032&format=interactive"></iframe>
+                    </div>
+                    <div class="chart-container">
+                        <h4>POWER</h4>
+                        <iframe width="500" height="400" seamless frameborder="0" scrolling="no"
+                            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRELwgZYn_Nr8A-kxUuE7SBi--fmg9UxF9yrOs4nTBYJNXLZQ71nclo3hSeEechLzjNlDPPPdUn0aCI/pubchart?oid=1916723935&format=interactive"></iframe>
+                    </div>
+                    <div class="chart-container">
+                        <h4>CURRENT</h4>
+                        <iframe width="500" height="400" seamless frameborder="0" scrolling="no"
+                            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRELwgZYn_Nr8A-kxUuE7SBi--fmg9UxF9yrOs4nTBYJNXLZQ71nclo3hSeEechLzjNlDPPPdUn0aCI/pubchart?oid=1757084082&format=interactive"></iframe>
+                    </div>
+                    <div class="chart-container">
+                        <h4>Energy Consumption</h4>
+                        <iframe width="500" height="400" seamless frameborder="0" scrolling="no"
+                            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRELwgZYn_Nr8A-kxUuE7SBi--fmg9UxF9yrOs4nTBYJNXLZQ71nclo3hSeEechLzjNlDPPPdUn0aCI/pubchart?oid=1656924880&format=interactive"></iframe>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <span class="next">&#10095;</span>
+                    <span class="prev">&#10094;</span>
+                </div>
+
+                <div class="dotsContainer">
+                    <div class="dot active" attr='0' onclick="switchImage(this)"></div>
+                    <div class="dot" attr='1' onclick="switchImage(this)"></div>
+                    <div class="dot" attr='2' onclick="switchImage(this)"></div>
+                    <div class="dot" attr='3' onclick="switchImage(this)"></div>
+                    <div class="dot" attr='4' onclick="switchImage(this)"></div>
+                    <div class="dot" attr='5' onclick="switchImage(this)"></div>
+                </div>
+            </div>
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Monika</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/user-1.png">
+                    </div>
+                </div>
+            </div>
+            <!-- End of Nav -->
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/logo2.png">
+                    <h2>Monika</h2>
+                    <p>Technician</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <span class="material-icons-sharp">notifications_none</span>
+                </div>
+
+                <div class="notification alert">
+                    <div class="icon">
+                        <span class="material-icons-sharp">warning</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <p><strong>Alert:</strong> HVAC filter replacement due soon.</p>
+                        </div>
+                        <span class="material-icons-sharp close-icon">close</span>
+                    </div>
+                </div>
+
+                <div class="notification active">
+                    <div class="icon">
+                        <span class="material-icons-sharp">volume_up</span>
+                    </div>
+                    <div class="content">
+                        <div class="info">
+                            <h3>Seasonal Maintenance Reminder</h3>
+                            <small class="text-muted">Date: May 15, 2024</small>
+                            <small class="text-muted">Time: 9:00 AM</small>
+                        </div>
+                        <span class="material-icons-sharp">more_vert</span>
+                        <span class="material-icons-sharp close-icon" onclick="removeNotification(this)">close</span>
+
+                    </div>
+                </div>
+
+                <div class="notification add-reminder">
+                    <div>
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Add Reminder</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.chart-container');
+        const dots = document.querySelectorAll('.dot');
+    
+        showSlides(slideIndex);
+    
+        function showSlides(n) {
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                dots[i].classList.remove('active');
+            }
+            slides[slideIndex].style.display = "block";
+            dots[slideIndex].classList.add('active');
+        }
+    
+        document.querySelector('.next').addEventListener('click', () => {
+            showSlides(++slideIndex);
+        });
+    
+        document.querySelector('.prev').addEventListener('click', () => {
+            showSlides(--slideIndex);
+        });
+    
+        function switchImage(dot) {
+            slideIndex = parseInt(dot.getAttribute('attr'));
+            showSlides(slideIndex);
+        }
+    
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                switchImage(dot);
+            });
+        });
+    
+        // Auto sliding
+        function autoSliding() {
+            deleteInterval = setInterval(() => {
+                showSlides(++slideIndex);
+            }, 3000);
+        }
+        autoSliding();
+    
+        // Stop auto sliding when mouse is over
+        const container = document.querySelector('.slide-container');
+        container.addEventListener('mouseover', function () {
+            clearInterval(deleteInterval);
+        });
+    
+        // Resume sliding when mouse is out
+        container.addEventListener('mouseout', autoSliding);
+    
+        // Add and remove active class from the indicators
+        function indicators() {
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(' active', '');
+            }
+            dots[slideIndex].className += ' active';
+        }
+
+
+        function fetchTotalEnergy() {
+  fetch('https://script.google.com/macros/s/AKfycbxsqMBXfC9eVK2vpVnilylxjqbvbqGZn7ManpE2xhOLnWUEIcosKj_iAyWjyqJCan-3/exec')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('totalEnergyValue').textContent = 'Total Energy Consumed: ' + data + ' kWh';
+    })
+    .catch(error => console.error('Error fetching data:', error));
+}
+
+// Initial fetch when the page loads
+fetchTotalEnergy();
+
+// Auto-refresh every 5 seconds
+setInterval(fetchTotalEnergy, 5000);
+
+    </script>
+    
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

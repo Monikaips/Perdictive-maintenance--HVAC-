@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Dashboard Design #1 | Airsense Artisans</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo" id="logo-img">
+                    <img src="images/logo.png">
+                    <h2>Airsense<br><span class="danger">Artisans</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html"  >
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="history.html" class="active">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>History</h3>
+                </a>
+                <a href="analytics.html">
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="reports.html">
+                    <span class="material-icons-sharp">
+                        report_gmailerrorred
+                    </span>
+                    <h3>Reports</h3>
+                </a>
+                
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            <h1>History</h1>
+            
+            <div class="report-download">
+               
+                <a id="download-button" href="#">
+                    <span class="box">DOWNLOAD REPORT!</span>
+                </a>
+            </div>
+            <div id="loading" style="display: none;">
+                <p>Loading data...</p>
+                <!-- You can use a spinner icon here if you prefer -->
+            </div>
+
+            <iframe  id="google-sheet" src="https://script.google.com/macros/s/AKfycbzJ7m6OUZBM5i_we6fKiqry4S6CLRsd9iL1HjzNv2qunQ2y5BRlnazDAA0PHpWcfvds/exec" style="width: 100%; justify-content:center; height: 100%;"></iframe>
+               </main>
+
+        
+        <!-- End of Main Content -->
+
+         <!-- Right Section -->
+         <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Monika</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/user-1.png">
+                    </div>
+                </div>
+
+            </div>
+            <!-- End of Nav -->
+
+            <div class="user-profile">
+                <div class="logo">
+                    <img src="images/logo2.png">
+                    <h2>Monika</h2>
+                    <p>Technician</p>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="header">
+                    <h2>Reminders</h2>
+                    <span class="material-icons-sharp">
+                        notifications_none
+                    </span>
+                </div>
+
+                <div id="reminders-list">
+                    <div class="notification alert">
+                        <div class="icon">
+                            <span class="material-icons-sharp">warning</span>
+                        </div>
+                        <div class="content">
+                            <div class="info">
+                                <p><strong>Alert:</strong> HVAC filter replacement due soon.</p>
+                            </div>
+                            <span class="material-icons-sharp close-icon">close</span>
+                        </div>
+                    </div>
+
+                    <div class="notification active">
+                        <div class="icon">
+                            <span class="material-icons-sharp">volume_up</span>
+                        </div>
+                        <div class="content">
+                            <div class="info">
+                                <h3>Seasonal Maintenance Reminder</h3>
+                                <small class="text-muted">
+                                    Date: May 15, 2024
+                                </small>
+                                <small class="text-muted">
+                                    Time: 9:00 AM
+                                </small>
+                                
+                            </div>
+                            <span class="material-icons-sharp">more_vert</span>
+                            <span class="material-icons-sharp close-icon" onclick="removeNotification(this)">close</span>
+                        </div>
+                    </div>
+
+                    <div class="notification add-reminder">
+                        <div>
+                            <span class="material-icons-sharp">add</span>
+                            <button>Add Reminder</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        function removeNotification(closeIcon) {
+            const notification = closeIcon.closest('.notification');
+            if (notification) {
+                notification.remove();
+            }
+        }
+
+        document.getElementById('download-button').addEventListener('click', function () {
+            const reportType = document.getElementById('report-type').value;
+            let url;
+            if (reportType === 'yesterday') {
+                url = 'https://docs.google.com/spreadsheets/d/1ansbRSyT0stcWdrnRYhZ7eZPlbJOEcKXHf7LnFOSmjQ/edit?gid=2092359127#gid=2092359127';
+            } else if (reportType === 'last-week') {
+                url = 'https://docs.google.com/spreadsheets/d/1ansbRSyT0stcWdrnRYhZ7eZPlbJOEcKXHf7LnFOSmjQ/edit?gid=1909504665#gid=1909504665';
+            } else if (reportType === 'last-month') {
+                url = 'https://docs.google.com/spreadsheets/d/1ansbRSyT0stcWdrnRYhZ7eZPlbJOEcKXHf7LnFOSmjQ/edit?gid=733568586#gid=733568586';
+            } else if (reportType === 'last-year') {
+                url = 'https://script.google.com/macros/s/YOUR_LAST_YEAR_REPORT_SCRIPT_URL/exec';
+            }
+
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = url;
+            document.body.appendChild(iframe);
+            iframe.onload = () => {
+                const sheetData = iframe.contentDocument.querySelector('table').outerHTML;
+                const csvContent = "data:text/csv;charset=utf-8," + encodeURIComponent(sheetData);
+                const downloadLink = document.createElement("a");
+                downloadLink.setAttribute("href", csvContent);
+                downloadLink.setAttribute("download", `${reportType}_report.csv`);
+                downloadLink.style.display = 'none';
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+                document.body.removeChild(iframe);
+            };
+        });
+    </script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
